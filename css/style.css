@@ -1,0 +1,51 @@
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  font-size: 5rem;
+  color: blue;
+  text-align: center;
+}
+
+ul{
+  margin-left: 2rem;
+  list-style-type: square;
+}
+
+li {
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
+  margin: 1rem;
+}
+
+img.Scotty{
+  margin-left: 8rem;
+  height:100px;
+}
+
+img.Matador{
+  margin-left: 3rem;
+  height: 100px;
+}
+
+img.LAUSD{
+  margin-left: 3rem;
+  height: 100px;
+}
+
+img.Raytheon{
+  margin-left: 3rem;
+  height: 100px;
+}
+
+img.Boeing{
+  margin-left: 1rem;
+  height: 100px;
+}
+
+p{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
+  margin-left: 1rem;
+}
