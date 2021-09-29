@@ -1,6 +1,8 @@
 'use strict';
 
-alert('You will now be asked five questions.');
+let userName = prompt('Please enter your first name.');
+
+alert(userName + ', you will now be asked five questions.');
 
 let raisedIn = prompt('Marni was raised in San Francisco, CA? (Yes/No)').toLowerCase();
 // console.log(raisedIn);
@@ -55,9 +57,9 @@ let puzzle = prompt('Marni views programming like a puzzle? (Yes/No)').toLowerCa
 
 if(puzzle === "yes" || puzzle === "y"){
   // console.log('You have answered correctly.');
-  alert('You have answered correctly.');
+  alert('You have answered correctly, ' + userName + '.');
 }
 else{
   // console.log('That is incorrect.');
-  alert('That is incorrect.');
+  alert('That is incorrect, ' + userName + '.');
 }
