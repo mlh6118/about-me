@@ -154,5 +154,8 @@ for(let j = (guessesRemaining - 1); j > 0; j --){ // Must use -1 to account for 
 
 }
 
+// Tell the user what the possible answers were.
+alert("The possible answers were: " + allAnswers);
+
 // Tell the user how many answers were correct.
 alert("You have scored " + totalCorrect + " out of a possible 7.");
