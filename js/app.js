@@ -74,18 +74,21 @@ function jobs() {
 }
 jobs();
 
-let puzzle = prompt('Marni views programming like a puzzle? (Yes/No)').toLowerCase();
-// console.log(puzzle);
-
-if(puzzle === "yes" || puzzle === "y"){
-  // console.log('You have answered correctly.');
-  alert('You have answered correctly, ' + userName + '.');
-  totalCorrect = totalCorrect + 1;
+function puzzle() {
+  let puzzle = prompt('Marni views programming like a puzzle? (Yes/No)').toLowerCase();
+  // console.log(puzzle);
+  
+  if(puzzle === "yes" || puzzle === "y"){
+    // console.log('You have answered correctly.');
+    alert('You have answered correctly, ' + userName + '.');
+    totalCorrect = totalCorrect + 1;
+  }
+  else{
+    // console.log('That is incorrect.');
+    alert('That is incorrect, ' + userName + '.');
+  }
 }
-else{
-  // console.log('That is incorrect.');
-  alert('That is incorrect, ' + userName + '.');
-}
+puzzle();
 
 // Create a guessing game that prompts the user for a computer generated number.  Give the user a total of four (4) guesses.  Let the user know if the guesses are too high, too low, or correct.  After all guesses are used up and still incorrect, let the user know what the correct answer is.
 
