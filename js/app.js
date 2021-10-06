@@ -41,18 +41,22 @@ function degrees() {
 
 degrees();
 
-let computers = prompt('Marni has experience with 4 types of computers? (Yes/No)').toLowerCase();
-// console.log(computers);
+function computers() {
+  let computers = prompt('Marni has experience with 4 types of computers? (Yes/No)').toLowerCase();
+  // console.log(computers);
+  
+  if(computers === "yes" || computers === "y"){
+    // console.log('You have answered correctly.');
+    alert('You have answered correctly.');
+    totalCorrect = totalCorrect + 1;
+  }
+  else{
+    // console.log('That is incorrect.');
+    alert('That is incorrect.');
+  }
+}
 
-if(computers === "yes" || computers === "y"){
-  // console.log('You have answered correctly.');
-  alert('You have answered correctly.');
-  totalCorrect = totalCorrect + 1;
-}
-else{
-  // console.log('That is incorrect.');
-  alert('That is incorrect.');
-}
+computers();
 
 let jobs = prompt('Marni has experience as a teacher? (Yes/No)').toLowerCase();
 // console.log(jobs);
