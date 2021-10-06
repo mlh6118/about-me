@@ -58,18 +58,21 @@ function computers() {
 
 computers();
 
-let jobs = prompt('Marni has experience as a teacher? (Yes/No)').toLowerCase();
-// console.log(jobs);
-
-if(jobs === "yes" || jobs === "y"){
-  // console.log('You have answered correctly.');
-  alert('You have answered correctly.');
-  totalCorrect = totalCorrect + 1;
+function jobs() {
+  let jobs = prompt('Marni has experience as a teacher? (Yes/No)').toLowerCase();
+  // console.log(jobs);
+  
+  if(jobs === "yes" || jobs === "y"){
+    // console.log('You have answered correctly.');
+    alert('You have answered correctly.');
+    totalCorrect = totalCorrect + 1;
+  }
+  else{
+    // console.log('That is incorrect.');
+    alert('That is incorrect.');
+  }
 }
-else{
-  // console.log('That is incorrect.');
-  alert('That is incorrect.');
-}
+jobs();
 
 let puzzle = prompt('Marni views programming like a puzzle? (Yes/No)').toLowerCase();
 // console.log(puzzle);
