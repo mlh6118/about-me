@@ -24,18 +24,22 @@ function raisedIn() {
 
 raisedIn();
 
-let degrees = prompt('Marni has two BS degrees? (Yes/No)').toLowerCase();
-// console.log(degrees);
+function degrees() {
+  let degrees = prompt('Marni has two BS degrees? (Yes/No)').toLowerCase();
+  // console.log(degrees);
+  
+  if(degrees === "no" || degrees === "n"){
+    // console.log('You have answered correctly.');
+    alert('You have answered correctly.');
+    totalCorrect = totalCorrect + 1;
+  }
+  else{
+    // console.log('That is incorrect.');
+    alert('That is incorrect.');
+  }
+}
 
-if(degrees === "no" || degrees === "n"){
-  // console.log('You have answered correctly.');
-  alert('You have answered correctly.');
-  totalCorrect = totalCorrect + 1;
-}
-else{
-  // console.log('That is incorrect.');
-  alert('That is incorrect.');
-}
+degrees();
 
 let computers = prompt('Marni has experience with 4 types of computers? (Yes/No)').toLowerCase();
 // console.log(computers);
