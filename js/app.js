@@ -151,30 +151,31 @@ alert('Let\'s play a new game.  Try to guess one of my favorite activities using
 activityGuessed = prompt('Please enter one or two words that you think are a favorite activity of Marni\'s.');
 
 // activityGuessed = activityGuessed.toLowerCase();
-
-for(let j = (guessesRemaining - 1); j > 0; j --){ // Must use -1 to account for the initial guess above.
-  for(let i = 0; i < favActivities.length; i++){
-    // alert(favActivities[i]);
-    if (activityGuessed.toLowerCase() === favActivities[i]){
-      alert('You have guessed a favorite activity of Marni\'s correctly!');
-      answeredCorrectly = 'Yes';
-      totalCorrect = totalCorrect + 1;
+function activitiesGuessingGame() {
+  for(let j = (guessesRemaining - 1); j > 0; j --){ // Must use -1 to account for the initial guess above.
+    for(let i = 0; i < favActivities.length; i++){
+      // alert(favActivities[i]);
+      if (activityGuessed.toLowerCase() === favActivities[i]){
+        alert('You have guessed a favorite activity of Marni\'s correctly!');
+        answeredCorrectly = 'Yes';
+        totalCorrect = totalCorrect + 1;
+        break;
+      }
+      else{
+        console.log(activityGuessed);
+      }
+    }
+  
+    // Break out of for loop if answer is correct.
+    if (answeredCorrectly === 'Yes'){
       break;
     }
-    else{
-      console.log(activityGuessed);
-    }
+  
+    activityGuessed = prompt('You have not guessed any of Marni\'s favorite activities correctly.  Please try again.');
+  
   }
-
-  // Break out of for loop if answer is correct.
-  if (answeredCorrectly === 'Yes'){
-    break;
-  }
-
-  activityGuessed = prompt('You have not guessed any of Marni\'s favorite activities correctly.  Please try again.');
-
 }
-
+activitiesGuessingGame();
 // Tell the user what the possible answers were.
 alert("The possible answers were: " + allAnswers);
 
