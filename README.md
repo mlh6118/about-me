@@ -1,8 +1,8 @@
 # about-me
 This is a webpage that will utilize HTML, CSS, and JavaScript.  It gives the user information about my life and then asks the user 5 yes or no questions.  The page then alerts the user as to whether the answer was correct or not.
 
-## Author: Marni Hager
-## Edited: Israel Vallejo
+## Driver: Marni Hager
+## Navigator: Israel Vallejo
 
 ## Links and Resources
 * Scotty the Highlander Bear image from https://i.ebayimg.com/images/g/EhkAAOSw2WheTJZB/s-l300.jpg.
