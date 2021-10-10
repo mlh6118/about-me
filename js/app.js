@@ -9,7 +9,7 @@ alert(userName + ', you will now be asked five questions.');
 
 let raisedIn = prompt('Marni was raised in San Francisco, CA? (Yes/No)').toLowerCase();
 
-if(raisedIn === "no" || raisedIn === "n"){
+if(raisedIn === 'no' || raisedIn === 'n'){
   alert('You have answered correctly.');
   totalCorrect = totalCorrect + 1;
 }
@@ -19,7 +19,7 @@ else{
 
 let degrees = prompt('Marni has two BS degrees? (Yes/No)').toLowerCase();
 
-if(degrees === "no" || degrees === "n"){
+if(degrees === 'no' || degrees === 'n'){
   alert('You have answered correctly.');
   totalCorrect = totalCorrect + 1;
 }
@@ -29,7 +29,7 @@ else{
 
 let computers = prompt('Marni has experience with 4 types of computers? (Yes/No)').toLowerCase();
 
-if(computers === "yes" || computers === "y"){
+if(computers === 'yes' || computers === 'y'){
   alert('You have answered correctly.');
   totalCorrect = totalCorrect + 1;
 }
@@ -39,7 +39,7 @@ else{
 
 let jobs = prompt('Marni has experience as a teacher? (Yes/No)').toLowerCase();
 
-if(jobs === "yes" || jobs === "y"){
+if(jobs === 'yes' || jobs === 'y'){
   alert('You have answered correctly.');
   totalCorrect = totalCorrect + 1;
 }
@@ -49,13 +49,14 @@ else{
 
 let puzzle = prompt('Marni views programming like a puzzle? (Yes/No)').toLowerCase();
 
-if(puzzle === "yes" || puzzle === "y"){
+if(puzzle === 'yes' || puzzle === 'y'){
   alert('You have answered correctly, ' + userName + '.');
   totalCorrect = totalCorrect + 1;
 }
 else{
   alert('That is incorrect, ' + userName + '.');
 }
+puzzle();
 
 // Create a guessing game that prompts the user for a computer generated number.  Give the user a total of four (4) guesses.  Let the user know if the guesses are too high, too low, or correct.  After all guesses are used up and still incorrect, let the user know what the correct answer is.
 
@@ -70,18 +71,21 @@ alert('Let\'s play a guessing game.  You will get four (4) chances to guess a co
 // Prompt user for guess.
 numberGuessed = prompt('Please enter your guess for the computer generated number.');
 
-while(parseInt(numberGuessed) !== correctAnswer && (numberOfGuesses - 1) > 0){
-  numberOfGuesses --;
-  if (parseInt(numberGuessed) < correctAnswer){
-    numberGuessed = prompt('You have incorrectly guessed the number.  The actual number is higher.  Please guess again.');
-  }
-  else if(parseInt(numberGuessed) > correctAnswer){
-    numberGuessed = prompt('You have incorrectly guessed the number.  The actual number is lower.  Please guess again.');
-  }
-  else{
-    numberGuessed = prompt('You have not entered a valid number.  Please guess again.');
+function numberGuessingGame() {
+  while(parseInt(numberGuessed) !== correctAnswer && (numberOfGuesses - 1) > 0){
+    numberOfGuesses --;
+    if (parseInt(numberGuessed) < correctAnswer){
+      numberGuessed = prompt('You have incorrectly guessed the number.  The actual number is higher.  Please guess again.');
+    }
+    else if(parseInt(numberGuessed) > correctAnswer){
+      numberGuessed = prompt('You have incorrectly guessed the number.  The actual number is lower.  Please guess again.');
+    }
+    else{
+      numberGuessed = prompt('You have not entered a valid number.  Please guess again.');
+    }
   }
 }
+numberGuessingGame();
 
 if(parseInt(numberGuessed) === correctAnswer){
   alert('You have guessed the computer generated number!');
@@ -102,7 +106,7 @@ let allAnswers = '';
 
 // Collate all of the answers into a single variable called allAnswers.
 for(let i = 0; i < favActivities.length - 1; i++){
-  allAnswers += favActivities[i] + ",  ";
+  allAnswers += favActivities[i] + ',  ';
 }
 
 // Add the last activity without the trailing ",".
@@ -114,30 +118,30 @@ alert('Let\'s play a new game.  Try to guess one of my favorite activities using
 // Prompt user for guess.
 activityGuessed = prompt('Please enter one or two words that you think are a favorite activity of Marni\'s.');
 
-for(let j = (guessesRemaining - 1); j > 0; j --){ // Must use -1 to account for the initial guess above.
-  for(let i = 0; i < favActivities.length; i++){
-    if (activityGuessed.toLowerCase() === favActivities[i]){
-      alert('You have guessed a favorite activity of Marni\'s correctly!');
-      answeredCorrectly = 'Yes';
-      totalCorrect = totalCorrect + 1;
-      break;
-    }
-    else{
-      console.log(activityGuessed);
+function activitiesGuessingGame(){
+  for(let j = (guessesRemaining - 1); j > 0; j --){ // Must use -1 to account for the initial guess above.
+    for(let i = 0; i < favActivities.length; i++){
+      if (activityGuessed.toLowerCase() === favActivities[i]){
+        alert('You have guessed a favorite activity of Marni\'s correctly!');
+        answeredCorrectly = 'Yes';
+        totalCorrect = totalCorrect + 1;
+        break;
+      }
+    
+      // Break out of for loop if answer is correct.
+      if (answeredCorrectly === 'Yes'){
+        break;
+      }
+    
+      activityGuessed = prompt('You have not guessed any of Marni\'s favorite activities correctly.  Please try again.');
+    
     }
   }
-
-  // Break out of for loop if answer is correct.
-  if (answeredCorrectly === 'Yes'){
-    break;
-  }
-
-  activityGuessed = prompt('You have not guessed any of Marni\'s favorite activities correctly.  Please try again.');
-
 }
 
+activitiesGuessingGame();
 // Tell the user what the possible answers were.
-alert("The possible answers were: " + allAnswers);
+alert('The possible answers were: ' + allAnswers);
 
 // Tell the user how many answers were correct.
-alert("You have scored " + totalCorrect + " out of a possible 7.");
+alert('You have scored ' + totalCorrect + ' out of a possible 7.');
